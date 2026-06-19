@@ -36,8 +36,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtNumero = new javax.swing.JTextField();
         txtLogaritmo = new javax.swing.JLabel();
         txtRaiz = new javax.swing.JLabel();
-        txtCalcular = new javax.swing.JButton();
-        txtLimpiar = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -52,11 +52,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         txtRaiz.setText(" ");
 
-        txtCalcular.setText("Calcular");
-        txtCalcular.addActionListener(this::txtCalcularActionPerformed);
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(this::btnCalcularActionPerformed);
 
-        txtLimpiar.setText("Limpiar");
-        txtLimpiar.addActionListener(this::txtLimpiarActionPerformed);
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,9 +66,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtCalcular)
+                        .addComponent(btnCalcular)
                         .addGap(50, 50, 50)
-                        .addComponent(txtLimpiar))
+                        .addComponent(btnLimpiar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -98,15 +98,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(txtRaiz))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCalcular)
-                    .addComponent(txtLimpiar))
+                    .addComponent(btnCalcular)
+                    .addComponent(btnLimpiar))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCalcularActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
 try{
     double num = Double.parseDouble(txtNumero.getText());
     String log = Calculos.calcularLogaritmoNeperiano(num);
@@ -125,13 +125,13 @@ catch(NumberFormatException e){
     txtRaiz.setText(" ");
     JOptionPane.showMessageDialog(null,"El valor debe ser numérico para calcular la raíz cuadrada","Error", JOptionPane.ERROR_MESSAGE);
 }
-    }//GEN-LAST:event_txtCalcularActionPerformed
+    }//GEN-LAST:event_btnCalcularActionPerformed
     
-    private void txtLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLimpiarActionPerformed
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
 txtNumero.setText("");
 txtLogaritmo.setText("");
 txtRaiz.setText("");
-    }//GEN-LAST:event_txtLimpiarActionPerformed
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,11 +159,11 @@ txtRaiz.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton txtCalcular;
-    private javax.swing.JButton txtLimpiar;
     private javax.swing.JLabel txtLogaritmo;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JLabel txtRaiz;
